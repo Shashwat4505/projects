@@ -1,0 +1,47 @@
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Poppins,sans-serif;background:#111;display:flex;justify-content:center;padding:40px;color:#eee;}
+.page-wrapper{text-align:center;position:relative;}
+.title{font-size:2.8rem;margin-bottom:50px;font-weight:700;background:linear-gradient(90deg,#bb86fc,#8a2be2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.projects-container{display:flex;flex-wrap:wrap;justify-content:center;gap:50px;position:relative;z-index:1;}
+
+.project-box{
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#1f1f1f,#111);
+  box-shadow:0 0 20px rgba(138,43,226,0.5),inset 0 0 10px rgba(75,0,130,0.6);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:25px;opacity:0;animation:fadeScaleIn 0.8s forwards;
+  transition:transform 0.4s ease,box-shadow 0.4s ease;
+  border:1px solid #333;
+}
+.project-box:hover{transform:scale(1.07);box-shadow:0 0 25px #bb86fc,inset 0 0 10px #8a2be2;border-color:#bb86fc;}
+.project-box:nth-child(1){animation-delay:0.2s;} .project-box:nth-child(2){animation-delay:0.4s;} .project-box:nth-child(3){animation-delay:0.6s;}
+.project-box:nth-child(4){animation-delay:0.8s;} .project-box:nth-child(5){animation-delay:1.0s;} .project-box:nth-child(6){animation-delay:1.2s;}
+.project-box h2{font-size:1.2rem;color:#bb86fc;margin-bottom:8px;}
+.project-box p{font-size:0.95rem;color:#ccc;line-height:1.4;padding:0 12px;}
+
+@keyframes fadeScaleIn{0%{opacity:0;transform:scale(0.85);}100%{opacity:1;transform:scale(1);}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);}}
+
+/* SVG Connector */
+.connector-svg {
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  overflow:visible;
+  pointer-events:none;
+  z-index:0;
+}
+.wave-path {
+  fill:none;
+  stroke:#8a2be2;
+  stroke-width:3;
+  stroke-linecap:round;
+  animation:wave 3s ease-in-out infinite;
+}
+/* Wave animation via stroke-dashoffset */
+@keyframes wave {
+  to {
+    stroke-dashoffset:1000;
+  }
+}
